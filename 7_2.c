@@ -7,7 +7,7 @@
 int main()
 {
     int num, bits;
-    int binario[32], complemento[32];
+    int binario[32];
 
     printf("Ingresa un numero entero: ");
     scanf("%d", &num);
@@ -21,12 +21,6 @@ int main()
             return 1;
         }
 
-    for (int i = 0; i < bits; i++)
-        {
-            binario[i] = (num >> i) & 1;
-            complemento[i] = 1 - binario[i]; // Calcula el complemento
-        }
-
     printf("Representacion binaria: ");
     for (int i = bits - 1; i >= 0; i--)
         {
@@ -34,12 +28,6 @@ int main()
         }
     printf("\n");
 
-    printf("Complemento: ");
-    for (int i = bits - 1; i >= 0; i--)
-        {
-            printf("%d", complemento[i]);
-        }
-    printf("\n");
 
 // Rellena con ceros a la derecha después del desplazamiento
     for (int i = bits - 2; i < bits; i++)
